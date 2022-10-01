@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Booking Center</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    
+
+    
+  </head>
+<body>
+  
+  
+<h1><center>Booking Center</center></h1><br><br>
+  
+  <center><label>If you would like to see a specific person, please put their name here:</label></center>
+  <center><input type="text"/><br><br></center>
+  <center><label>What day would you like this appointment?</label></center>
+  <center><input type="date" name="apptdate"/><br><br></center>
+  <center><label>What time would you like this appointment? Hours are 8am to 3pm.</label></center>
+  <center><input type="time" id="appttime" name="appttime" min="08:00" max="15:00" required /></center><br>  
+<center><button class="submit" type="submit">Submit</button></center>
+</body></html>
