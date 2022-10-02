@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="https://glitch.com/favicon.ico" />
 
-    <title>Refer Someone</title>
+    <title>Report a Teacher</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -14,14 +14,18 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-      
-    <h1>Report a Teacher</h1>
-    <form>
-      <label>Who do you want to report?<br><input name="reportname"/></label><br><br>
-      <label>What is the issue with this teacher?<br>
-      <textarea name="reportline" rows="30" cols="100"></textarea><br></label>
-      <button class="submit" type="submit">Submit</button>
-    </form>
+    <div class = "report-container">
+      <div class = "medical-form">
+        <form class = "medical-info"> 
+          <label><p class = "ask-report">Who do you want to report?</p><br><br>
+          <input class = "input-reportname" name="reportname" placeholder = "Name" /></label><br><br><br>
+          <label><p class = "ask-report">What is the issue with this teacher?</p><br><br>
+            <textarea class = "text-holder" name="reportline" rows="20" cols="60" placeholder = "Please type here..."></textarea><br></label>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    
   </body>
 
   
