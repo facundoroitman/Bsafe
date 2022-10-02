@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore, collection, getDocs} from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,7 +21,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-console.log(app);
+
+const db = getFirestore();
+const colRef = collection(db, "School A");
+
+let everyone = []
+let students = []
+let faculty = []
+getDocs(colRef)
+    .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+            if (doc.data().Role == "student"){
+                students.push({...doc.data(), id: doc.id})
+                everyone.push({...doc.data(), id: doc.id})
+            }else{
+                faculty.push({...doc.data(), id: doc.id})
+                everyone.push({...doc.data(), id: doc.id})
+
+            }
+           
+        })
+    })
+
+
+
+console.log(everyone);
+
+
+
 
 const login = document.querySelector(".login-info");
 
@@ -31,12 +59,19 @@ login.addEventListener("submit", e =>{
   e.preventDefault();
   var username = e.target.username.value;
   var password = e.target.password.value;
-  console.log(username +" " + password);
+  let match = everyone.filter(e => e.username === username)
+
+  if (match.length>0){
+    if (match[0].password === password){
+        if(match[0].Role === "student"){
+            window.location.href = "/student_center.html";
+        }else{
+            window.location.href = "/faculty_center.html";
+        }
+    }
+  }
   e.target.reset();
   
   
-  //   THE FOLLOWING LINE OF CODE ASSUMES THAT THE PERSON WAS IN THE DATABASE
-  window.location.href = "/student_center.html";
-  
-  
+ 
 })
