@@ -14,14 +14,17 @@
     <script src="/script.js" defer></script>
   </head>
   <body>
-      
-    <h1>Refer Someone</h1>
-    <form>
-      <label>Who do you want to refer?<br><input name="refername"/></label><br><br>
-      <label>Can you explain what is going on with them?<br>
-      <textarea name="referralline" rows="30" cols="100"></textarea><br></label>
-      <button class="submit" type="submit">Submit</button>
-    </form>
+    <div class = "report-container">
+      <div class = "medical-form">
+        <form class = "medical-info"> 
+          <label><p class = "ask-report">Who do you want to refer?</p><br><br>
+          <input class = "input-reportname" name="reportname" placeholder = "Name"/></label><br><br><br>
+          <label><p class = "ask-report">Can you explain what is going on with them?</p><br><br>
+            <textarea class = "text-holder" name="reportline" rows="20" cols="60" placeholder = "Please type here..."></textarea><br></label>
+            <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </body>
 
   
