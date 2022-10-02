@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs} from "firebase/firestore";
+import { getFirestore, collection, getDocs, updateDoc} from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -45,34 +45,55 @@ getDocs(colRef)
 
 
 
-console.log(everyone);
-
 
 //for index.html
 
-const login = document.querySelector(".login-info");
 
-login.addEventListener("submit", e =>{
-  e.preventDefault();
-  var username = e.target.username.value;
-  var password = e.target.password.value;
-  let match = everyone.filter(e => e.username === username)
+if (window.location.pathname === "/index.html"){
+    const login = document.querySelector(".login-info");
+    login.addEventListener("submit", e =>{
+      e.preventDefault();
 
-  if (match.length>0){
-    if (match[0].password === password){
-        if(match[0].Role === "student"){
-            window.location.href = "/student_center.html";
-        }else{
-            window.location.href = "/faculty_center.html";
+       var username = e.target.username.value;
+       localStorage.setItem("username", username);
+       var password = e.target.password.value;
+       localStorage.setItem("password", password);
+      let match = everyone.filter(e => e.username === username)
+    
+      if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
         }
-    }
-  }
-  e.target.reset();
-  
-  
- 
-})
+      }
+      e.target.reset();
+    })
+
+
+}
+
+
+
 
 
 //for medical.html
 
+if(window.location.pathname === "/medical.html"){
+    const medicalNote = document.querySelector(".medical-note");
+
+    medicalNote.addEventListener("submit", e=> {
+        e.preventDefault();
+        var text = e.target.crisisline.value;
+        let username =  localStorage.getItem("username");
+        let match = everyone.filter(e => e.username === username);
+
+        let obj = {"text": text, "other": "-", "type":"medical"}
+        match[0].Notes.push(obj);
+        console.log(match[0].Notes)
+
+        e.target.reset();
+})
+}
