@@ -124,4 +124,15 @@ if (window.location.pathname == "index.html"){
     }
     e.target.reset();
     }) 
+
+
+}else if (window.location.pathname == "health_assessment.html"){
+    const assessment = document.querySelector(".assessment");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var healtheval = e.target.healtheval.value;
+    window.location.href = "/student_center.html";
+    target.reset();
+    }) 
 }
