@@ -7,11 +7,11 @@ body {
 
     font-family: 'Arial'; 
     background: url(./images/image.png);
-    background-size: 100% 100%;
+    background-size: cover;
 }  
 
-.ask {
-  background-color: red;
+.ask-user {
+  background-color: #6c0c8c;
   color: white;
   padding: 20px; 
   border-radius: 10px;
@@ -79,12 +79,13 @@ body {
 }
 
 .student-center-container {
-  
+  margin-top: 150px;
+  text-align: center;
 
 }
 
 .nurse {
-
+  
 }
   
 .counselor {
@@ -98,6 +99,100 @@ body {
 .referral {
   
 }
+
+.help-list {
+  padding: 20px; 
+  border-radius: 10px;
+  margin-bottom: 40px;
+  display: block;
+  width: 35%;
+  font-size: 20px;
+}
+
   
   
+.help-button {
+  color: white;
+  padding: 10px 30px; 
+  background-color: grey;
+  margin: auto;
+  font-size: 17px;
+}
+
+.medicalline-container {
+  display: flex;
+  height: 100vh;
+}
+
+.medical-form {  
+  width: 35%;  
+  overflow: hidden;  
+  margin: auto;  
+  margin: 20 0 0 450px; 
+  padding: 80px;  
+  border-radius: 15px;
+  background-color: #dad9db;
   
+          
+}  
+
+h1 {
+  color: white;
+}
+
+.medical-info {
+  margin: auto;
+  
+}
+
+.text-holder {
+  border-radius: 15px;
+  font-size: 17px;
+}
+.submit {
+  display: block;
+  color: white;
+  padding: 10px 30px; 
+  background-color: #4474ec;
+  margin: auto;
+  font-size: 17px;
+  margin-top: 40px;
+}
+
+.booking-container {
+  margin-top: 200px;
+  text-align: center;
+  
+
+}
+
+label {
+  color: white;
+  font-size: 20px;
+}
+
+.report-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.ask-report {
+  background-color: #6c0c8c;
+  color: white;
+  padding: 10px; 
+  border-radius: 3px;
+  
+}
+
+.input-reportname {
+  display: block;
+  width: 30%;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 17px;
+  
+}
+
+.health-container {
+  margin-top: 80px;
+}
