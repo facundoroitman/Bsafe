@@ -44,8 +44,6 @@ getDocs(colRef)
     })
 
 
-
-
 //for index.html
 
 
@@ -68,20 +66,76 @@ if (window.location.pathname === "/index.html"){
                 window.location.href = "/faculty_center.html";
             }
         }
-      }
-      e.target.reset();
+    }
+    e.target.reset();
+    })  
+
+
+} else if (window.location.pathname == "/mental.html"){
+    const mentalForm = document.querySelector(".mentalline");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var text = e.target.crisisline.value;
+    window.location.href = "/student_center.html";//only student goes to this
+    e.target.reset();
     })
+    
+    
+}else if (window.location.pathname == "/report.html"){
+    const reportForm = document.querySelector(".reportform");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var reportname = e.target.reportname.value;
+    var text = e.target.reportline.value;
+
+    let match = everyone.filter(e => e.username === username) // WILL NEED USERNAME
+    if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
+        }
+    }
+    e.target.reset();
+    }) 
 
 
-}
+}else if (window.location.pathname == "/referrals.html"){
+    const referForm = document.querySelector(".referform");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var refername = e.target.refername.value;
+    var text = e.target.referralline.value;
+
+    let match = everyone.filter(e => e.username === username) // WILL NEED USERNAME
+    if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
+        }
+    }
+    e.target.reset();
+    }) 
 
 
+}else if (window.location.pathname == "/health_assessment.html"){
+    const assessment = document.querySelector(".assessment");
 
-
-
-//for medical.html
-
-if(window.location.pathname === "/medical.html"){
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var healtheval = e.target.healtheval.value;
+    window.location.href = "/student_center.html";
+    target.reset();
+    }) 
+} else if(window.location.pathname === "/medical.html"){
     const medicalNote = document.querySelector(".medical-note");
 
     medicalNote.addEventListener("submit", e=> {
