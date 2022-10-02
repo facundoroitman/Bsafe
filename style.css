@@ -1,74 +1,103 @@
-/* a minimalist set of CSS resets */
-
-/* default to border-box */
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {  
+
+    font-family: 'Arial'; 
+    background: url(./images/image.png);
+    background-size: 100% 100%;
+}  
+
+.ask {
+  background-color: red;
+  color: white;
+  padding: 20px; 
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.login {  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px; 
+        padding: 80px;  
+        background: white;  
+        border-radius: 15px ;  
+          
+}  
+
+.login-info {
+  margin: auto;
   
+}
+
+#Uname {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 17px;
+  text-align: center;
   
+}
+
+#Pass {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  font-size: 17px;
+  text-align: center;
+}
+
+#log {
+  display: block;
+  color: white;
+  padding: 10px 30px; 
+  background-color: #191C3E;
+  margin: auto;
+  font-size: 17px;
   
+}
+
+.bottom {
+  margin: auto;
+}
   
-  body {  
-      margin: 0;  
-      padding: 0;  
-      background-color:#6abadeba;  
-      font-family: 'Arial';  
-  }  
+.question {
+  text-align: middle;
+  color: white;
+  margin: auto;
+}
+
+.student-center-container {
   
-  .ask {
-    background-color: red;
-    color: white;
-    padding: 20px; 
-    border-radius: 10px;
-    margin-bottom: 40px;
-  }
+
+}
+
+.nurse {
+
+}
   
-  .login-container {
-    display: flex;
-    height: 100vh;
-  }
-  .login {  
-          width: 382px;  
-          overflow: hidden;  
-          margin: auto;  
-          margin: 20 0 0 450px;;  
-          padding: 80px;  
-          background: white;  
-          border-radius: 15px ;  
-            
-  }  
+.counselor {
   
-  .login-info {
-    margin: auto;
-    
-  }
+}
+
+.misconduct {
   
-  #Uname {
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    height: 30px;
-    
-  }
+}
+
+.referral {
   
-  #Pass {
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    border-radius: 5px;
-    height: 30px;
-  }
-  
-  #log {
-    
-    
-    
-  }
-  
-  
-  
-  
+}
   
   
   
