@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs} from "firebase/firestore";
+import { getFirestore, collection, getDocs, updateDoc} from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -44,21 +44,21 @@ getDocs(colRef)
     })
 
 
+//for index.html
 
-console.log(everyone);
 
-
-//For login
-if (window.location.pathname == "index.html"){
+if (window.location.pathname === "/index.html"){
     const login = document.querySelector(".login-info");
-
     login.addEventListener("submit", e =>{
-    e.preventDefault();
-    var username = e.target.username.value;
-    var password = e.target.password.value;
-    let match = everyone.filter(e => e.username === username)
+      e.preventDefault();
 
-    if (match.length>0){
+       var username = e.target.username.value;
+       localStorage.setItem("username", username);
+       var password = e.target.password.value;
+       localStorage.setItem("password", password);
+      let match = everyone.filter(e => e.username === username)
+    
+      if (match.length>0){
         if (match[0].password === password){
             if(match[0].Role === "student"){
                 window.location.href = "/student_center.html";
@@ -71,7 +71,7 @@ if (window.location.pathname == "index.html"){
     })  
 
 
-} else if (window.location.pathname == "mental.html"){
+} else if (window.location.pathname == "/mental.html"){
     const mentalForm = document.querySelector(".mentalline");
 
     login.addEventListener("submit", e =>{
@@ -82,7 +82,7 @@ if (window.location.pathname == "index.html"){
     })
     
     
-}else if (window.location.pathname == "report.html"){
+}else if (window.location.pathname == "/report.html"){
     const reportForm = document.querySelector(".reportform");
 
     login.addEventListener("submit", e =>{
@@ -104,7 +104,7 @@ if (window.location.pathname == "index.html"){
     }) 
 
 
-}else if (window.location.pathname == "referrals.html"){
+}else if (window.location.pathname == "/referrals.html"){
     const referForm = document.querySelector(".referform");
 
     login.addEventListener("submit", e =>{
@@ -126,7 +126,7 @@ if (window.location.pathname == "index.html"){
     }) 
 
 
-}else if (window.location.pathname == "health_assessment.html"){
+}else if (window.location.pathname == "/health_assessment.html"){
     const assessment = document.querySelector(".assessment");
 
     login.addEventListener("submit", e =>{
@@ -135,4 +135,19 @@ if (window.location.pathname == "index.html"){
     window.location.href = "/student_center.html";
     target.reset();
     }) 
+} else if(window.location.pathname === "/medical.html"){
+    const medicalNote = document.querySelector(".medical-note");
+
+    medicalNote.addEventListener("submit", e=> {
+        e.preventDefault();
+        var text = e.target.crisisline.value;
+        let username =  localStorage.getItem("username");
+        let match = everyone.filter(e => e.username === username);
+
+        let obj = {"text": text, "other": "-", "type":"medical"}
+        match[0].Notes.push(obj);
+        console.log(match[0].Notes)
+
+        e.target.reset();
+})
 }

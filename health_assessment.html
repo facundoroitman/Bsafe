@@ -6,7 +6,7 @@
     <link rel="icon" href="https://glitch.com/favicon.ico" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Faculty Center</title>
+    <title>Health Assessment</title>
 
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
@@ -14,14 +14,28 @@
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
   </head>
-
-  <body> 
-    <h1>Health Assessment</h1><br>
-      <form class="assessment">
-        <label>How are you doing today?<br>
-        <textarea name="healtheval" rows="30" cols="100"></textarea></label><br>
-        <button class="submit" type="submit">Submit</button>
-      </form>
+  <body>
+    <!-- <div class = "health-container">
+      
+      <form class = "medical-info"> 
+        <center><h3 class = "ask-user"></h3> </center>
+       <textarea class = "text-holder" name="crisisline" rows="10" cols="55" placeholder = "Please type here..."></textarea>
+       <button class="submit" type="submit">Submit</button>
+    </form>
+    </div> 
+    <div class = "medicalline-container"> -->
+    
+    <div class = "health-container">
+      <div class = "medical-form">
+        <center><h1>Health Assessment</h1><br></center>
+        <form class = "assessment"> 
+            <center><h3 class = "ask-user">How are you doing today?</h3> </center>
+           <textarea class = "text-holder" name="crisisline" rows="10" cols="55" placeholder = "Please type here..."></textarea>
+          <br>
+          <button class="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </body>
 
 </html>
