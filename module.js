@@ -48,30 +48,80 @@ getDocs(colRef)
 console.log(everyone);
 
 
+//For login
+if (window.location.pathname == "index.html"){
+    const login = document.querySelector(".login-info");
 
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var username = e.target.username.value;
+    var password = e.target.password.value;
+    let match = everyone.filter(e => e.username === username)
 
-const login = document.querySelector(".login-info");
-
-
-
-
-login.addEventListener("submit", e =>{
-  e.preventDefault();
-  var username = e.target.username.value;
-  var password = e.target.password.value;
-  let match = everyone.filter(e => e.username === username)
-
-  if (match.length>0){
-    if (match[0].password === password){
-        if(match[0].Role === "student"){
-            window.location.href = "/student_center.html";
-        }else{
-            window.location.href = "/faculty_center.html";
+    if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
         }
     }
-  }
-  e.target.reset();
-  
-  
- 
-})
+    e.target.reset();
+    })  
+
+
+} else if (window.location.pathname == "mental.html"){
+    const mentalForm = document.querySelector(".mentalline");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var text = e.target.crisisline.value;
+    window.location.href = "/student_center.html";//only student goes to this
+    e.target.reset();
+    })
+    
+    
+}else if (window.location.pathname == "report.html"){
+    const reportForm = document.querySelector(".reportform");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var reportname = e.target.reportname.value;
+    var text = e.target.reportline.value;
+
+    let match = everyone.filter(e => e.username === username) // WILL NEED USERNAME
+    if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
+        }
+    }
+    e.target.reset();
+    }) 
+
+
+}else if (window.location.pathname == "referrals.html"){
+    const referForm = document.querySelector(".referform");
+
+    login.addEventListener("submit", e =>{
+    e.preventDefault();
+    var refername = e.target.refername.value;
+    var text = e.target.referralline.value;
+
+    let match = everyone.filter(e => e.username === username) // WILL NEED USERNAME
+    if (match.length>0){
+        if (match[0].password === password){
+            if(match[0].Role === "student"){
+                window.location.href = "/student_center.html";
+            }else{
+                window.location.href = "/faculty_center.html";
+            }
+        }
+    }
+    e.target.reset();
+    }) 
+}
