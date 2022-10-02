@@ -82,7 +82,7 @@ if (window.location.pathname === "/index.html"){
     })
     
     
-}else if (window.location.pathname == "/report.html"){
+} else if (window.location.pathname == "/report.html"){
     const reportForm = document.querySelector(".reportform");
 
     login.addEventListener("submit", e =>{
@@ -104,7 +104,7 @@ if (window.location.pathname === "/index.html"){
     }) 
 
 
-}else if (window.location.pathname == "/referrals.html"){
+} else if (window.location.pathname == "/referrals.html"){
     const referForm = document.querySelector(".referform");
 
     login.addEventListener("submit", e =>{
@@ -126,7 +126,7 @@ if (window.location.pathname === "/index.html"){
     }) 
 
 
-}else if (window.location.pathname == "/health_assessment.html"){
+} else if (window.location.pathname == "/health_assessment.html"){
     const assessment = document.querySelector(".assessment");
 
     login.addEventListener("submit", e =>{
@@ -135,7 +135,9 @@ if (window.location.pathname === "/index.html"){
     window.location.href = "/student_center.html";
     target.reset();
     }) 
-} else if(window.location.pathname === "/medical.html"){
+
+
+} else if (window.location.pathname === "/medical.html"){
     const medicalNote = document.querySelector(".medical-note");
 
     medicalNote.addEventListener("submit", e=> {
