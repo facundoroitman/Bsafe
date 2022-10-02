@@ -48,12 +48,9 @@ getDocs(colRef)
 console.log(everyone);
 
 
-
+//for index.html
 
 const login = document.querySelector(".login-info");
-
-
-
 
 login.addEventListener("submit", e =>{
   e.preventDefault();
@@ -75,3 +72,7 @@ login.addEventListener("submit", e =>{
   
  
 })
+
+
+//for medical.html
+
